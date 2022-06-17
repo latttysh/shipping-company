@@ -1,0 +1,44 @@
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  border-bottom: 1px solid #ededed;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+
+  &__logo {
+    width: 193px;
+    cursor: pointer;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    &__item {
+      font-size: 16px;
+      color: #7b7b7b;
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+  .header__button {
+    width: 159px;
+    height: 43px;
+    background: #e8ecff;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    color: #59639d;
+    cursor: pointer;
+    font-family: 'Inter';
+  }
+}
