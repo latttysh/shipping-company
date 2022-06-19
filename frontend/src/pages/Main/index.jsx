@@ -109,6 +109,92 @@ function Main() {
           />
         </div>
       </div>
+
+      <div className={styles.advantages}>
+        <div className={styles.advantages__title}>Наши преимущества</div>
+        <div className={styles.advantages__block}>
+          <div className={styles.advantages__item}>
+            <div className={styles.advantages__img}>
+              <img src="./img/speed.svg" alt="" />
+            </div>
+            <div className={styles.advantages__item__title}>Скорость</div>
+            <div className={styles.advantages__item__description}>
+              Быстрый расчёт стоимости и оформление заявки
+            </div>
+          </div>
+          <div className={styles.advantages__item}>
+            <div className={styles.advantages__img}>
+              <img src="./img/security.svg" alt="" />
+            </div>
+            <div className={styles.advantages__item__title}>Безопасность</div>
+            <div className={styles.advantages__item__description}>
+              Обязательная страховка всех перевозимых грузов
+            </div>
+          </div>
+          <div className={styles.advantages__item}>
+            <div className={styles.advantages__img}>
+              <img src="./img/support.svg" alt="" />
+            </div>
+            <div className={styles.advantages__item__title}>Поддержка</div>
+            <div className={styles.advantages__item__description}>
+              Полное сопровождение всего процесса доставки
+            </div>
+          </div>
+          <div className={styles.advantages__item}>
+            <div className={styles.advantages__img}>
+              <img src="./img/five.svg" alt="" />
+            </div>
+            <div className={styles.advantages__item__title}>Надёжность</div>
+            <div className={styles.advantages__item__description}>
+              5 лет опыта на рынке грузовых перевозок
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.safe}>
+        <div className={styles.safe__title}>Безопасная сделка</div>
+        <div className={styles.safe__subtitle}>
+          Для новых пользователей у нас есть услуга "Безопасная сделка". Сибирская транспортная
+          компания выступает в роли третьего лица(посредника) в сделке между покупателем и
+          продавцом.
+        </div>
+
+        <div className={styles.safe_levels}>
+          <div className={styles.level}>
+            <div className={styles.level__title}>Договоренность участников</div>
+            <div className={styles.counter}>1</div>
+            <div className={styles.level__description}>
+              После того, как покупатель и продавец обсудили условия сделки, продавец вызывает
+              курьера нашей компании.{' '}
+            </div>
+          </div>
+          <div className={styles.level}>
+            <div className={styles.level__title}>Договор и проверка</div>
+            <div className={styles.counter}>2</div>
+            <div className={styles.level__description}>
+              Курьер составляет договор с описанием товара, проверяет его на наличие скрытых
+              дефектов и повреждений.
+            </div>
+          </div>
+          <div className={styles.level}>
+            <div className={styles.level__title}>Договоренность участников</div>
+            <div className={styles.counter}>1</div>
+            <div className={styles.level__description}>
+              После того, как покупатель и продавец обсудили условия сделки, продавец вызывает
+              курьера нашей компании.{' '}
+            </div>
+          </div>
+          <div className={styles.level}>
+            <div className={styles.level__title}>Договоренность участников</div>
+            <div className={styles.counter}>1</div>
+            <div className={styles.level__description}>
+              После того, как покупатель и продавец обсудили условия сделки, продавец вызывает
+              курьера нашей компании.{' '}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
