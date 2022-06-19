@@ -1,0 +1,130 @@
+.container {
+  padding-top: 50px;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.link__level {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 100%;
+  color: #33395b;
+  font-family: 'Golos-bold';
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 150%;
+  color: #33395b;
+  margin-bottom: 25px;
+}
+
+.calculator {
+  border-left: 2px dashed #e8ecff;
+
+  .stepOne {
+    .form__title {
+      margin-left: -5px;
+      padding-left: 15px;
+      border-left: 10px solid #314dcb;
+      font-size: 22px;
+      line-height: 26px;
+      font-family: 'Golos-medium';
+      color: #33395b;
+    }
+    .inputs {
+      padding: 30px;
+      label {
+        display: block;
+        font-size: 16px;
+        line-height: 19px;
+        color: #33395b;
+        margin-bottom: 15px;
+      }
+      input {
+        padding-left: 16px;
+        width: 630px;
+        height: 51px;
+        background: #ffffff;
+        border: 1px solid #d6d6d6;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 20px;
+      }
+      button {
+        display: block;
+        width: 327px;
+        height: 51px;
+        border: 2px solid #314dcb;
+        border-radius: 5px;
+        background: none;
+        font-size: 20px;
+        line-height: 24px;
+        color: #314dcb;
+        cursor: pointer;
+      }
+    }
+  }
+  .stepTwo {
+    .form__title {
+      margin-left: -5px;
+      padding-left: 15px;
+      border-left: 10px solid #314dcb;
+      font-size: 22px;
+      line-height: 26px;
+      font-family: 'Golos-medium';
+      color: #33395b;
+    }
+    .inputs {
+      padding: 30px;
+      label {
+        display: block;
+        font-size: 16px;
+        line-height: 19px;
+        color: #33395b;
+        margin-bottom: 15px;
+      }
+      input {
+        padding-left: 16px;
+        width: 150px;
+        height: 51px;
+        background: #ffffff;
+        border: 1px solid #d6d6d6;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 20px;
+      }
+      textarea {
+        padding-left: 16px;
+        padding: 15px;
+        width: 630px;
+        height: 204px;
+        background: #ffffff;
+        border: 1px solid #d6d6d6;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 20px;
+      }
+      button {
+        display: block;
+        width: 327px;
+        height: 51px;
+        border: 2px solid #314dcb;
+        border-radius: 5px;
+        background: none;
+        font-size: 20px;
+        line-height: 24px;
+        color: #314dcb;
+        cursor: pointer;
+      }
+      .gabarits {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
