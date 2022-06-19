@@ -14,7 +14,7 @@ function App() {
       <Route path="check" element={<Check />} />
       <Route path="adminpageonly" element={<Admin />} /> */}
       </Routes>
-      {/* <Header /> */}
+      <Header />
     </>
   );
 }

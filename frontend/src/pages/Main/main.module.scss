@@ -258,6 +258,7 @@
 }
 
 .safe {
+  margin-bottom: 160px;
   .safe__title {
     font-size: 32px;
     line-height: 38px;
@@ -280,6 +281,7 @@
   .level {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 15px;
     width: 777px;
     .level__title {
