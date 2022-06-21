@@ -1,0 +1,27 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  width: 630px;
+  height: 118px;
+  padding: 26px 30px;
+  margin-bottom: 30px;
+
+  .info {
+    .text {
+      font-size: 16px;
+      line-height: 19px;
+      color: #33395b;
+      font-family: 'Golos-medium';
+      margin-bottom: 10px;
+    }
+    .counter {
+      font-size: 16px;
+      line-height: 150%;
+      color: #33395b;
+    }
+  }
+}

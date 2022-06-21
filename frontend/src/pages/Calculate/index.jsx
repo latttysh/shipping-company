@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './calculate.module.scss';
+import Item from '../../components/Item';
+import Delivery from '../../components/Delivery';
 
 function Calculate() {
   return (
@@ -25,7 +27,7 @@ function Calculate() {
             <button type="button">Перейти к следующему шагу</button>
           </div>
         </form>
-        <form className={styles.stepOne}>
+        <form className={styles.stepOne} style={{ display: 'block' }}>
           <div className={styles.form__title}>Шаг 2. Кому и куда доставить?</div>
           <div className={styles.inputs}>
             <label>Имя получателя</label>
@@ -64,7 +66,58 @@ function Calculate() {
             </div>
             <label>Опись отправления</label>
             <textarea placeholder="Краткое описание" />
-            <button type="button">Перейти к следующему шагу</button>
+            <Item />
+            <div className={styles.buttons}>
+              <button type="button" className={styles.button__add}>
+                Добавить груз
+              </button>
+              <button type="button" className={styles.button__next}>
+                Перейти к следующему шагу
+              </button>
+            </div>
+          </div>
+        </form>
+        <form className={styles.stepThird}>
+          <div className={styles.form__title}>Шаг 4. Дополнительные параметры</div>
+          <div className={styles.inputs}>
+            <div className="block">
+              <div className={styles.checkbox}>
+                <input type="checkbox" />
+                <label>Страховка отправления</label>
+              </div>
+              <div className={styles.description}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, sit orci nisl, ut
+                velit, orci dolor. In pulvinar eget ut sollicitudin quis fringilla posuere sociis.
+                Massa facilisi urna sit tortor. Sagittis purus rutrum sit duis. Orci consectetur
+                volutpat risus scelerisque. Duis augue eget nulla in cursus.
+              </div>
+            </div>
+            <div className="block">
+              <div className={styles.checkbox}>
+                <input type="checkbox" />
+                <label>Безопасная сделка</label>
+              </div>
+              <div className={styles.description}>
+                Для новых пользователей у нас есть услуга "Безопасная сделка". Сибирская
+                транспортная компания выступает в роли третьего лица(посредника) в сделке между
+                покупателем и продавцом.
+              </div>
+            </div>
+            <div className={styles.buttons}>
+              <button type="button" className={styles.button__add}>
+                Добавить груз
+              </button>
+              <button type="button" className={styles.button__next}>
+                Перейти к следующему шагу
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <form className={styles.stepThird}>
+          <div className={styles.form__title}>Шаг 4. Дополнительные параметры</div>
+          <div className={styles.inputs}>
+            <Delivery />
           </div>
         </form>
       </div>

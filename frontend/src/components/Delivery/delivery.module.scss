@@ -1,0 +1,60 @@
+.delivery {
+  background: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  width: 630px;
+  height: 338px;
+  padding: 30px;
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ededed;
+    .title {
+      font-size: 18px;
+      line-height: 100%;
+      color: #33395b;
+      font-family: 'Golos-medium';
+      margin-bottom: 15px;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 150%;
+      width: 348px;
+      color: #33395b;
+    }
+  }
+
+  .price {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 30px;
+    .title {
+      font-size: 16px;
+      line-height: 19px;
+      color: #33395b;
+      font-family: 'Golos-medium';
+      margin-bottom: 10px;
+    }
+  }
+  .total {
+    font-size: 30px;
+    line-height: 36px;
+    color: #3347a1;
+    font-family: 'Golos-medium';
+  }
+  button {
+    background: #314dcb;
+    border-radius: 5px;
+    width: 293px;
+    height: 51px;
+    border: none;
+    font-size: 20px;
+    line-height: 24px;
+    color: #e8ecff;
+    cursor: pointer;
+  }
+}
