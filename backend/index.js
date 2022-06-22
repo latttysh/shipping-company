@@ -1,14 +1,63 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import TrackSchema from './models/Track.js';
 
 const app = express();
 
+mongoose
+  .connect('mongodb://localhost:27017/shipping')
+  .then(() => console.log('Done'))
+  .catch(() => console.log('Error'));
+
 app.use(express.json());
 
-app.post('/init', (req, res) => {
-  return res.status(200).json({
-    message: 'hello :)d',
-  });
+app.post('/addtrack', async (req, res) => {
+  try {
+    const doc = new TrackSchema({
+      number: req.body.number,
+      sender: req.body.sender,
+      reciever: req.body.reciever,
+      description: req.body.description,
+      weight: req.body.weight,
+      address: req.body.address,
+      phoneReciever: req.body.phoneReciever,
+    });
+    const post = await doc.save();
+    res.json(post);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: 'Не удалось создать трек номер',
+    });
+  }
+});
+
+app.get('/track/:id', async (req, res) => {
+  try {
+    const number = req.params.id;
+    TrackSchema.findOne(
+      {
+        number: number,
+      },
+      (err, doc) => {
+        if (err) {
+          return res.status(500).json({
+            message: 'Не удалось получить трек номер',
+          });
+        }
+        if (!doc) {
+          return res.status(404).json({
+            message: 'Такого трек номера не существует',
+          });
+        }
+        res.json(doc);
+      },
+    );
+  } catch (error) {
+    res.status(500).json({
+      message: 'Не удалось получить трек номер',
+    });
+  }
 });
 
 app.listen(4444, (err) => {
