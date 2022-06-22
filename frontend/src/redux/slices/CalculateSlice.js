@@ -24,7 +24,8 @@ export const calculateSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      state.items = state.items.push(action.payload);
+      console.log(action.payload);
+      state.items.push(action.payload.item);
     },
     addSender: (state, action) => {
       console.log(action.payload);
@@ -46,10 +47,18 @@ export const calculateSlice = createSlice({
         address: action.payload.reciever.address,
       };
     },
+    deleteItem: (state, action) => {
+      console.log('Удаление!');
+      console.log(action.payload);
+      state.items = state.items.filter((item) => item.weight !== `${action.payload}`);
+    },
+    addSafety: (state, action) => {
+      state.security = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem, addSender, addReciever } = calculateSlice.actions;
+export const { addItem, addSender, addReciever, deleteItem, addSafety } = calculateSlice.actions;
 
 export default calculateSlice.reducer;

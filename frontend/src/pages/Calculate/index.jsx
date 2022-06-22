@@ -3,7 +3,7 @@ import styles from './calculate.module.scss';
 import Item from '../../components/Item';
 import Delivery from '../../components/Delivery';
 import { useSelector, useDispatch } from 'react-redux';
-import { addSender, addReciever } from '../../redux/slices/CalculateSlice';
+import { addSender, addReciever, addItem, addSafety } from '../../redux/slices/CalculateSlice';
 import { useForm } from 'react-hook-form';
 
 function Calculate() {
@@ -18,23 +18,37 @@ function Calculate() {
   const { register: register3, handleSubmit: handleSubmit3 } = useForm({
     mode: 'onBlur',
   });
-  const onSubmitSender = (data) => {
-    dispatch(addSender(data));
+
+  const { register: register4, handleSubmit: handleSubmit4 } = useForm({
+    mode: 'onBlur',
+  });
+
+  const onSubmitSender = async (data) => {
     setStep(step + 1);
+    dispatch(addSender(data));
   };
 
   const onSubmitReciever = (data) => {
-    console.log(data);
     setStep(step + 1);
+    dispatch(addReciever(data));
   };
 
   const onSubmitItem = (data) => {
+    dispatch(addItem(data));
+  };
+
+  const onSubmitSafety = (data) => {
     console.log(data);
+    dispatch(addSafety(data));
     setStep(step + 1);
   };
 
-  const params = useSelector((state) => state.info);
-  console.log(params);
+  const nextStep = () => {
+    setStep(step + 1);
+  };
+
+  const items = useSelector((state) => state.info.items);
+  console.log(items);
   const dispatch = useDispatch();
 
   return (
@@ -116,25 +130,34 @@ function Calculate() {
             </div>
             <label>Опись отправления</label>
             <textarea {...register3('item.description')} placeholder="Краткое описание" />
-            <Item />
+            {items.map((item, i) => (
+              <Item
+                length={item.length}
+                width={item.width}
+                height={item.height}
+                weight={item.weight}
+                key={i}
+              />
+            ))}
             <div className={styles.buttons}>
-              <button type="button" className={styles.button__add}>
+              <button type="submit" className={styles.button__add}>
                 Добавить груз
               </button>
-              <button type="submit" className={styles.button__next}>
+              <button type="button" onClick={nextStep} className={styles.button__next}>
                 Перейти к следующему шагу
               </button>
             </div>
           </div>
         </form>
         <form
+          onSubmit={handleSubmit4(onSubmitSafety)}
           className={styles.stepThird}
           style={step > 2 ? { display: 'block' } : { display: 'none' }}>
           <div className={styles.form__title}>Шаг 4. Дополнительные параметры</div>
           <div className={styles.inputs}>
             <div className="block">
               <div className={styles.checkbox}>
-                <input type="checkbox" />
+                <input {...register4('insurance')} type="checkbox" />
                 <label>Страховка отправления</label>
               </div>
               <div className={styles.description}>
@@ -146,7 +169,7 @@ function Calculate() {
             </div>
             <div className="block">
               <div className={styles.checkbox}>
-                <input type="checkbox" />
+                <input type="checkbox" {...register4('secure')} />
                 <label>Безопасная сделка</label>
               </div>
               <div className={styles.description}>
@@ -156,10 +179,7 @@ function Calculate() {
               </div>
             </div>
             <div className={styles.buttons}>
-              <button type="button" className={styles.button__add}>
-                Добавить груз
-              </button>
-              <button type="button" className={styles.button__next}>
+              <button type="submit" className={styles.button__next}>
                 Перейти к следующему шагу
               </button>
             </div>
