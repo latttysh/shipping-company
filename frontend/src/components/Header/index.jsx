@@ -17,10 +17,10 @@ function Header() {
             <Link to={'/calculate'}>
               <div className={styles.menu__item}>Рассчитать стоимость</div>
             </Link>
-            <Link to={'/'}>
+            <Link to={'/contact'}>
               <div className={styles.menu__item}>Контакты</div>
             </Link>
-            <Link to={'/'}>
+            <Link to={'/check'}>
               <div className={styles.menu__item}>Отследить посылку</div>
             </Link>
           </div>

@@ -1,0 +1,57 @@
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.check {
+  padding-top: 55px;
+  .check__title {
+    font-size: 28px;
+    line-height: 100%;
+    font-family: "Golos-bold";
+    color: #33395b;
+    margin-bottom: 30px;
+  }
+  .check__status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        margin-bottom: 10px;
+      }
+      .status {
+        width: 190px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.track__info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #EDEDED;
+  .item {
+    display: flex;
+    gap: 14px;
+    .title {
+      font-size: 17px;
+      line-height: 20px;
+      color: #7b7b7b;
+    }
+    .info {
+      font-size: 17px;
+      line-height: 20px;
+      font-family: "Golos-medium";
+      color: #383838;
+    }
+  }
+}
