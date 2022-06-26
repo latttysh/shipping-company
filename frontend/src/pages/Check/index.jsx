@@ -9,9 +9,9 @@ function Check() {
   const [status, setStatus] = React.useState("null");
   const dispatch = useDispatch();
   const info = useSelector((state) => state.track)
-  console.log(info)
   const location = useLocation();
-  console.log(location);
+
+  const isTrackLoading = info.status === "loading"
 
   React.useEffect(() => {
     if (location.state?.track) {
@@ -23,7 +23,10 @@ function Check() {
   }, []);
   return (
     <div className={styles.container}>
-      {status !== "null" ? (
+      {
+      isTrackLoading ? <></> :
+        status !== "null" ? 
+      info.status !== "error" ? (
         <>
           <div className={styles.check}>
             <div className={styles.check__title}>Отследить заказ</div>
@@ -53,7 +56,7 @@ function Check() {
           <div className={styles.track__info}>
             <div className={styles.item}>
               <div className={styles.title}>Трек номер:</div>
-              <div className={styles.info}>№1120309540</div>
+              <div className={styles.info}>{info.data.number}</div>
             </div>
             <div className={styles.item}>
               <div className={styles.title}>Статус доставки:</div>
@@ -71,19 +74,19 @@ function Check() {
           <div className={styles.track__info}>
             <div className={styles.item}>
               <div className={styles.title}>Отправитель:</div>
-              <div className={styles.info}>Иванов Андрей Сергеевич</div>
+              <div className={styles.info}>{info.data.sender}</div>
             </div>
             <div className={styles.item}>
               <div className={styles.title}>Получатель:</div>
-              <div className={styles.info}>Рахимов Исмат Кудратулоевич</div>
+              <div className={styles.info}>{info.data.reciever}</div>
             </div>
             <div className={styles.item}>
               <div className={styles.title}>Опись вложения:</div>
-              <div className={styles.info}>Фотоаппарат Sony ILCE-6500</div>
+              <div className={styles.info}>{info.data.description}</div>
             </div>
             <div className={styles.item}>
               <div className={styles.title}>Вес товара:</div>
-              <div className={styles.info}>1.02 кг</div>
+              <div className={styles.info}>{info.data.weight} кг</div>
             </div>
             <div className={styles.item}>
               <div className={styles.title}>Безопасная сделка</div>
@@ -92,16 +95,16 @@ function Check() {
             <div className={styles.item}>
               <div className={styles.title}>Адрес доставки:</div>
               <div className={styles.info}>
-                Москва, Рынок "Садовод", шестая линяя, 93 место
+              {info.data.address}
               </div>
             </div>
             <div className={styles.item}>
               <div className={styles.title}>Номер получателя: </div>
-              <div className={styles.info}>+7 (925) 103 55-50</div>
+              <div className={styles.info}>{info.data.phoneReciever}</div>
             </div>
           </div>
-        </>
-      ) : (
+        </>) : <><div className="">Данный трек номер не найден</div></>
+      : (
         <>
           <div className={styles.search}>
             <div className={styles.title}>Отследить заказ</div>
@@ -116,7 +119,8 @@ function Check() {
             </div>
           </div>
         </>
-      )}
+      )
+      }
     </div>
   );
 }
