@@ -6,12 +6,13 @@ export const fetchTrack = createAsyncThunk(
   async (params) => {
     console.log("Отправляем данные");
     console.log(params);
-    const {data} = await axios.get("/track/")
+    const { data } = await axios.get(`/track/${params}`);
+    return data
   }
 );
 
 const initialState = {
-  data: [],
+  data: null,
   status: "Loading",
 };
 
@@ -21,13 +22,13 @@ const checkTrack = createSlice({
   reducers: {},
   extraReducers: {
     [fetchTrack.pending]: (state) => {
-        state.data = null;
-        state.status = 'loading';
-      },
-      [fetchTrack.fulfilled]: (state, action) => {
-        state.data = action.payload;
-        state.status = 'loaded';
-      },
+      state.data = null;
+      state.status = "loading";
+    },
+    [fetchTrack.fulfilled]: (state, action) => {
+      state.data = action.payload;
+      state.status = "loaded";
+    },
     [fetchTrack.rejected]: (state) => {
       state.data = null;
       state.status = "error";

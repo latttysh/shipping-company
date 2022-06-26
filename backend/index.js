@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import TrackSchema from './models/Track.js';
+import cors from "cors"
 
 const app = express();
 
@@ -10,6 +11,7 @@ mongoose
   .catch(() => console.log('Error'));
 
 app.use(express.json());
+app.use(cors())
 
 app.post('/addtrack', async (req, res) => {
   try {
