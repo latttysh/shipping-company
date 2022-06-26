@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 function Check() {
   const [status, setStatus] = React.useState("null");
   const dispatch = useDispatch();
+  const info = useSelector((state) => state.track)
+  console.log(info)
   const location = useLocation();
   console.log(location);
 
@@ -16,6 +18,7 @@ function Check() {
       console.log("Трек есть");
       setStatus("filled");
       dispatch(fetchTrack(location.state.track));
+      
     }
   }, []);
   return (
