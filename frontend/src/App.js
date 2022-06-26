@@ -5,6 +5,7 @@ import Calculate from './pages/Calculate';
 import Main from './pages/Main';
 import Check from './pages/Check';
 import Contacts from './pages/Contacts';
+import AdminPage from './pages/Adminpage';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="calculate" element={<Calculate />} />
         <Route path="contact" element={<Contacts />} />
         <Route path="check" element={<Check />} />
-        {/* <Route path="adminpageonly" element={<Admin />} /> */}
+        <Route path="adminpage" element={<AdminPage />} />
       </Routes>
       {/* <Header /> */}
     </>

@@ -24,7 +24,9 @@ function Main() {
             Доставка грузов специалистами в области международной
             экспресс-доставки
           </div>
+          <Link to={"/calculate"}>
           <button className={styles.hero__button}>Оформить доставку</button>
+          </Link>
         </div>
         <div className={styles.hero__advantages}>
           <img className={styles.hero__bg} src="./img/hero-bg.png" alt="" />
@@ -79,7 +81,9 @@ function Main() {
           <div className={styles.calculate__reciever}>
             <input placeholder="Город получателя" type="text" />
           </div>
+          <Link to={"/calculate"}>
           <button className={styles.calculate__btn}>Рассчитать</button>
+          </Link>
         </div>
       </div>
 

@@ -6,6 +6,10 @@ const TrackSchema = new mongoose.Schema(
       type: 'string',
       required: true,
     },
+    date: {
+      type: 'string',
+      required: true,
+    },
     sender: {
       type: 'string',
       required: true,
