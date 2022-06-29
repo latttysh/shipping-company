@@ -25,3 +25,24 @@
     }
   }
 }
+
+@media (max-width: 428px) {
+  .item {
+    width: 368px;
+    padding: 13px 15px;
+    img {
+      height: 45px;
+      width: 45px;
+    }
+    .close {
+      height: 30px;
+      width: 30px;
+    }
+    .info {
+      .text {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

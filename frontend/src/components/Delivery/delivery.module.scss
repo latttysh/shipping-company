@@ -58,3 +58,31 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 428px) {
+  .delivery {
+    width: 368px;
+    height: 547px;
+    .info {
+      flex-direction: column;
+      .title {
+        text-align: center;
+      }
+      .description {
+        text-align: center;
+        width: 328px;
+      }
+    }
+    .price {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      margin-left: -10px !important;
+      width: 328px !important;
+      height: 51px !important;
+    }
+  }
+}

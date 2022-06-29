@@ -13,19 +13,19 @@ function Item({ length, width, height, weight }) {
     <div className={styles.item}>
       <img src="./img/item.svg" alt="" />
       <div className={styles.info}>
-        <div className={styles.text}>Длина (см)</div>
+        <div className={styles.text}>Длина</div>
         <div className={styles.counter}>{length}</div>
       </div>
       <div className={styles.info}>
-        <div className={styles.text}>Ширина (см)</div>
+        <div className={styles.text}>Ширина</div>
         <div className={styles.counter}>{width}</div>
       </div>
       <div className={styles.info}>
-        <div className={styles.text}>Высота (см)</div>
+        <div className={styles.text}>Высота</div>
         <div className={styles.counter}>{height}</div>
       </div>
       <div className={styles.info}>
-        <div className={styles.text}>Вес (кг)</div>
+        <div className={styles.text}>Вес</div>
         <div className={styles.counter}>{weight}</div>
       </div>
       <img
@@ -33,6 +33,7 @@ function Item({ length, width, height, weight }) {
         style={{ cursor: 'pointer' }}
         src="./img/close.svg"
         alt=""
+        className={styles.close}
       />
     </div>
   );

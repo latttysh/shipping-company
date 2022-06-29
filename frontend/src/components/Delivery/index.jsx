@@ -23,7 +23,7 @@ function Delivery() {
           <div className={styles.total}>7 400₽</div>
         </div>
       </div>
-      <button>Оформить онлайн-заявку</button>
+      <button onClick={() => alert('Заявка успешно оформлена')}>Оформить онлайн-заявку</button>
     </div>
   );
 }

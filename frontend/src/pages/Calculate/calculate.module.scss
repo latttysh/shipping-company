@@ -228,3 +228,68 @@
     }
   }
 }
+
+@media (max-width: 428px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    .stepOne {
+      .inputs {
+        padding: 15px;
+        input {
+          width: 363px;
+          height: 51px;
+        }
+        button {
+          width: 363px;
+        }
+      }
+    }
+    .stepTwo {
+      .inputs {
+        padding: 15px;
+        .gabarits {
+          display: flex;
+          column-gap: 30px;
+          width: 428px;
+          flex-wrap: wrap;
+          input {
+            width: 165px;
+            height: 51px;
+          }
+        }
+        textarea {
+          width: 363px;
+          height: 204px;
+        }
+        .buttons {
+          flex-direction: column;
+          gap: 10px;
+          .button__add {
+            margin-left: 0;
+            width: 363px;
+            height: 51px;
+          }
+          .button__next {
+            width: 363px;
+            height: 51px;
+          }
+        }
+      }
+    }
+    .stepThird {
+      .inputs {
+        padding: 15px;
+        .description {
+          width: 100%;
+        }
+        .buttons {
+          .button__next {
+            width: 328px;
+          }
+        }
+      }
+    }
+  }
+}
