@@ -8,7 +8,7 @@
   .check__title {
     font-size: 28px;
     line-height: 100%;
-    font-family: "Golos-bold";
+    font-family: 'Golos-bold';
     color: #33395b;
     margin-bottom: 30px;
   }
@@ -50,7 +50,7 @@
     .info {
       font-size: 17px;
       line-height: 20px;
-      font-family: "Golos-medium";
+      font-family: 'Golos-medium';
       color: #383838;
     }
   }
@@ -62,7 +62,7 @@
     font-size: 28px;
     line-height: 100%;
     color: #33395b;
-    font-family: "Golos-bold";
+    font-family: 'Golos-bold';
     margin-bottom: 30px;
   }
   .subtitle {
@@ -93,6 +93,32 @@
       line-height: 24px;
       color: #ffffff;
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    .check {
+      .check__status {
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+      }
+    }
+    .search {
+      input {
+        width: 388px;
+        height: 51px;
+        margin-bottom: 10px;
+      }
+      button {
+        width: 388px;
+        height: 51px;
+      }
     }
   }
 }
