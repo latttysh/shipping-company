@@ -53,7 +53,7 @@ function Calculate() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.link__level}>Главная > Калькулятор расчёта стоимости</div>
+      {/* <div className={styles.link__level}>Главная > Калькулятор расчёта стоимости</div> */}
       <div className={styles.title}>Калькулятор расчёта стоимости</div>
       <div className={styles.subtitle}>Здесь вы можете рассчитать стоимость и срок доставки.</div>
 

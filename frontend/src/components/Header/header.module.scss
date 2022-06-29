@@ -8,12 +8,21 @@
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 72px;
 
+  .burger {
+    display: none;
+  }
+  .mobile__menu {
+    display: none;
+  }
+
   &__logo {
+    height: 50px;
     width: 193px;
     cursor: pointer;
   }
@@ -51,12 +60,46 @@
     padding: 20px;
   }
   .header {
+    .burger {
+      cursor: pointer;
+      display: block;
+    }
+    .mobile__menu {
+      a {
+        text-decoration: none;
+      }
+      padding: 15px;
+      position: absolute;
+      width: 234px;
+      height: 264px;
+      background: #ffffff;
+      border: 1px solid #ededed;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      right: 0;
+      top: 80px;
+      z-index: 20;
+
+      .menu__item {
+        border-bottom: 1px solid #ededed;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 19px;
+        color: #383838;
+        font-family: 'Golos-bold';
+        text-decoration: none;
+        text-align: right;
+      }
+    }
     .menu {
       display: none;
     }
     .header__button {
       width: 163px;
       height: 48px;
+      margin-right: 10px;
     }
   }
 }

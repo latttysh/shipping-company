@@ -267,6 +267,12 @@
     .hero {
       display: flex;
       flex-direction: column;
+      a {
+        text-decoration: none;
+      }
+      .hero__uptitle {
+        text-align: center;
+      }
       .hero__title {
         font-size: 32px;
         line-height: 38px;
