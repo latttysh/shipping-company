@@ -44,3 +44,19 @@
     font-family: 'Inter';
   }
 }
+
+@media (max-width: 428px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+  .header {
+    .menu {
+      display: none;
+    }
+    .header__button {
+      width: 163px;
+      height: 48px;
+    }
+  }
+}

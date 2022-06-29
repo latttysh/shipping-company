@@ -46,3 +46,24 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 428px) {
+  .serviceblock {
+    width: 388px;
+    height: 226px;
+    .title {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .description {
+      width: 240px;
+      font-size: 12px;
+    }
+    .button {
+      bottom: 20px;
+    }
+    img {
+      margin-top: 40px !important;
+    }
+  }
+}

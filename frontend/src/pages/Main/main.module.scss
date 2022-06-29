@@ -129,6 +129,7 @@
       }
     }
   }
+
   .calculate__block {
     display: flex;
     border-left: 10px solid #314dcb;
@@ -252,6 +253,126 @@
         line-height: 150%;
         text-align: center;
         color: #33395b;
+      }
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .container {
+    padding-top: 40px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    .hero {
+      display: flex;
+      flex-direction: column;
+      .hero__title {
+        font-size: 32px;
+        line-height: 38px;
+        width: 388px;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .hero__description {
+        font-size: 16px;
+        text-align: center;
+        width: 388px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+      .hero__button {
+        width: 388px;
+        height: 50px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .hero__advantages {
+      width: 388px;
+      padding-bottom: 60px;
+      .hero__bg {
+        display: none; // FIX FIX FIX
+      }
+      .hero__items {
+        align-items: center;
+        // padding: 0 40px;
+      }
+    }
+    .inputs__block {
+      flex-direction: column;
+      width: 388px;
+      margin: 0 auto;
+      margin-bottom: 120px;
+
+      .search__block {
+        margin-bottom: 20px;
+        .search {
+          width: 368px;
+          height: 51px;
+          input {
+            width: 358px;
+          }
+          img {
+            margin-left: 100px;
+          }
+        }
+      }
+      .calculate__block {
+        display: block;
+        .calculate__sender {
+          display: block;
+          border: none;
+          margin-bottom: 15px;
+          input {
+            border: 1px solid #d6d6d6;
+            width: 368px;
+            height: 51px;
+            padding: 10px;
+            outline: none;
+            border-radius: 5px;
+          }
+        }
+        .calculate__reciever {
+          display: block;
+          border: none;
+          margin-bottom: 20px;
+          input {
+            border: 1px solid #d6d6d6;
+            width: 368px;
+            height: 51px;
+            padding: 10px;
+            outline: none;
+            border-radius: 5px;
+          }
+        }
+        .calculate__btn {
+          margin-left: 0;
+          width: 368px;
+          height: 51px;
+        }
+      }
+    }
+    .service {
+      .service__title {
+        margin-left: 20px;
+      }
+      .service__blocks {
+        width: 388px;
+        margin: 0 auto;
+      }
+    }
+    .advantages {
+      width: 388px;
+      margin: 0 auto;
+      .advantages__block {
+        display: block;
+        .advantages__item {
+          width: 388px;
+          height: 300px;
+          margin-bottom: 20px;
+        }
       }
     }
   }
