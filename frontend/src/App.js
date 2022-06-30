@@ -6,6 +6,7 @@ import Main from './pages/Main';
 import Check from './pages/Check';
 import Contacts from './pages/Contacts';
 import AdminPage from './pages/Adminpage';
+import Safety from './pages/Safety';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="contact" element={<Contacts />} />
         <Route path="check" element={<Check />} />
         <Route path="adminpage" element={<AdminPage />} />
+        <Route path="safe" element={<Safety />} />
       </Routes>
       {/* <Header /> */}
     </>

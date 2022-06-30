@@ -1,17 +1,17 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import TrackSchema from './models/Track.js';
-import cors from "cors"
+import cors from 'cors';
 
 const app = express();
 
 mongoose
-  .connect('mongodb://localhost:27017/shipping')
+  .connect('mongodb+srv://admin:admin@cluster0.8tvjeha.mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log('Done'))
   .catch(() => console.log('Error'));
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 app.post('/addtrack', async (req, res) => {
   try {
@@ -23,7 +23,7 @@ app.post('/addtrack', async (req, res) => {
       weight: req.body.weight,
       address: req.body.address,
       phoneReciever: req.body.phoneReciever,
-      date: req.body.date
+      date: req.body.date,
     });
     const post = await doc.save();
     res.json(post);

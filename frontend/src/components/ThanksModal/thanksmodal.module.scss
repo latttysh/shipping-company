@@ -1,0 +1,74 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // opacity: 0;
+  z-index: 9999;
+  overflow: auto;
+  background: rgba(14, 14, 14, 0.8);
+  margin-top: -200px;
+  .modal {
+    padding: 20px;
+    width: 700px;
+    height: 250px;
+    background: #e8ecff;
+    margin: 0 auto;
+    margin-top: 400px;
+    border-radius: 20px;
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        font-size: 32px;
+        // line-height: 38px;
+        font-family: 'Golos-bold';
+        color: #33395b;
+        margin-bottom: 30px;
+      }
+      .close {
+        margin-top: -20px;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: 'Golos-bold';
+        color: #33395b;
+      }
+    }
+    .inputs {
+      font-size: 16px;
+      line-height: 150%;
+      /* or 24px */
+
+      color: #33395b;
+      margin-bottom: 30px;
+    }
+    button {
+      background: #314dcb;
+      border-radius: 5px;
+      width: 400px;
+      height: 51px;
+      border: none;
+      font-size: 20px;
+      line-height: 24px;
+      color: #ffffff;
+      display: block;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .overlay {
+    .modal {
+      width: 388px;
+      height: 300px;
+      button {
+        width: 250px !important;
+        margin: 0 auto !important;
+      }
+    }
+  }
+}

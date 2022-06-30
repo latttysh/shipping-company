@@ -1,9 +1,18 @@
 import React from 'react';
 import styles from './delivery.module.scss';
+import ThanksModal from '../ThanksModal';
 
 function Delivery() {
+  const [visibleModalThanks, setVisibleModalThanks] = React.useState(false);
+
+  const onButtonClick = () => {
+    setVisibleModalThanks(!visibleModalThanks);
+  };
   return (
     <div className={styles.delivery}>
+      {visibleModalThanks && (
+        <ThanksModal close={() => setVisibleModalThanks(!visibleModalThanks)} />
+      )}
       <div className={styles.info}>
         <img src="./img/courier.svg" alt="courier" />
         <div className="block">
@@ -23,7 +32,9 @@ function Delivery() {
           <div className={styles.total}>7 400₽</div>
         </div>
       </div>
-      <button onClick={() => alert('Заявка успешно оформлена')}>Оформить онлайн-заявку</button>
+      <button type="button" onClick={onButtonClick}>
+        Оформить онлайн-заявку
+      </button>
     </div>
   );
 }

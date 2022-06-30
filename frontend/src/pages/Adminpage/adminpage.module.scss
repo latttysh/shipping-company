@@ -7,7 +7,7 @@
 .title {
   font-size: 28px;
   line-height: 100%;
-  font-family: "Golos-bold";
+  font-family: 'Golos-bold';
   color: #33395b;
   margin-bottom: 30px;
 }
@@ -40,7 +40,7 @@ form {
     font-size: 16px;
     line-height: 19px;
     color: #33395b;
-    font-family: "Golos-medium";
+    font-family: 'Golos-medium';
     margin-bottom: 10px;
   }
   input {
@@ -52,5 +52,22 @@ form {
     border-radius: 5px;
     outline: none;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 428px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+    .admin {
+      form {
+        input {
+          width: 350px;
+        }
+        button {
+          width: 350px;
+        }
+      }
+    }
   }
 }
