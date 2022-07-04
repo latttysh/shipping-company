@@ -34,6 +34,10 @@ const TrackSchema = new mongoose.Schema(
       type: 'string',
       required: true,
     },
+    stage: {
+      type: 'string',
+      required: true,
+    },
   },
   {
     timestamps: true,

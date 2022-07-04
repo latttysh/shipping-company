@@ -1,21 +1,21 @@
-import React from "react";
-import styles from "./adminpage.module.scss";
-import { useForm } from "react-hook-form";
-import {useDispatch } from 'react-redux';
-import { fetchAddTrack } from "../../redux/slices/Check";
-
+import React from 'react';
+import styles from './adminpage.module.scss';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { fetchAddTrack } from '../../redux/slices/Check';
 
 function AdminPage() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm({
-    mode: "onBlur",
+    mode: 'onBlur',
   });
 
   const onSubmit = (data) => {
     console.log(data);
-    dispatch(fetchAddTrack(data))
-    alert("Трек номер успешно создан! Проверьте его через отслеживание трек номеров перед отслыки клиенту.")
-    
+    dispatch(fetchAddTrack(data));
+    alert(
+      'Трек номер успешно создан! Проверьте его через отслеживание трек номеров перед отслыки клиенту.',
+    );
   };
 
   return (
@@ -56,8 +56,17 @@ function AdminPage() {
               <label>Номер получателя</label>
               <input {...register('phoneReciever')} type="text" placeholder="Номер получателя" />
             </div>
+            <select {...register('stage')}>
+              <option value="1">Ожидает поступления посылки</option>
+              <option value="2">Посылка принята в отделении</option>
+              <option value="3">Ожидает оплаты</option>
+              <option value="4">В пути</option>
+              <option value="5">Ожидает получения</option>
+            </select>
           </div>
-          <button type="submit">Создать трек номер</button>
+          <button className={styles.submitbtn} type="submit">
+            Создать трек номер
+          </button>
         </form>
       </div>
     </div>

@@ -24,6 +24,7 @@ app.post('/addtrack', async (req, res) => {
       address: req.body.address,
       phoneReciever: req.body.phoneReciever,
       date: req.body.date,
+      stage: req.body.stage,
     });
     const post = await doc.save();
     res.json(post);

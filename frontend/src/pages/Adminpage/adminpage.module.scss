@@ -18,7 +18,7 @@ form {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  button {
+  .submitbtn {
     display: block;
     margin: 0 auto;
     width: 500px;
@@ -53,6 +53,17 @@ form {
     outline: none;
     margin-bottom: 20px;
   }
+}
+select {
+  width: 450px;
+  height: 51px;
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+  color: #314dcb;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
 }
 
 @media (max-width: 428px) {

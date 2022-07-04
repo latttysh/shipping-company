@@ -1,31 +1,31 @@
-import React from "react";
-import styles from "./check.module.scss";
+import React from 'react';
+import styles from './check.module.scss';
 
-import { fetchTrack } from "../../redux/slices/Check";
-import { useLocation, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { fetchTrack } from '../../redux/slices/Check';
+import { useLocation, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Check() {
-  const [status, setStatus] = React.useState("null");
-  const [value, setValue] = React.useState("null");
+  const [status, setStatus] = React.useState('null');
+  const [value, setValue] = React.useState('null');
   const dispatch = useDispatch();
   const info = useSelector((state) => state.track);
   const location = useLocation();
 
-  const isTrackLoading = info.status === "loading";
+  const isTrackLoading = info.status === 'loading';
 
   const onInputChange = (event) => {
     setValue(event.target.value);
   };
 
-  const onClickButton = () =>{
+  const onClickButton = () => {
     window.location.reload();
-  }
+  };
 
   React.useEffect(() => {
     if (location.state?.track) {
-      console.log("Трек есть");
-      setStatus("filled");
+      console.log('Трек есть');
+      setStatus('filled');
       dispatch(fetchTrack(location.state.track));
     }
   }, []);
@@ -33,34 +33,30 @@ function Check() {
     <div className={styles.container}>
       {isTrackLoading ? (
         <></>
-      ) : status !== "null" ? (
-        info.status !== "error" ? (
+      ) : status !== 'null' ? (
+        info.status !== 'error' ? (
           <>
             <div className={styles.check}>
               <div className={styles.check__title}>Отследить заказ</div>
               <div className={styles.check__status}>
                 <div className={styles.item}>
-                  <img src="./img/done.svg" alt="" />
-                  <div className={styles.status}>
-                    Ожидает поступления посылки
-                  </div>
+                  <img src={info.data.stage >= 1 ? './img/done.svg' : './img/notDone.svg'} alt="" />
+                  <div className={styles.status}>Ожидает поступления посылки</div>
                 </div>
                 <div className={styles.item}>
-                  <img src="./img/done.svg" alt="" />
-                  <div className={styles.status}>
-                    Посылка принята в отделении
-                  </div>
+                  <img src={info.data.stage >= 2 ? './img/done.svg' : './img/notDone.svg'} alt="" />
+                  <div className={styles.status}>Посылка принята в отделении</div>
                 </div>
                 <div className={styles.item}>
-                  <img src="./img/notDone.svg" alt="" />
+                  <img src={info.data.stage >= 3 ? './img/done.svg' : './img/notDone.svg'} alt="" />
                   <div className={styles.status}>Ожидает оплаты</div>
                 </div>
                 <div className={styles.item}>
-                  <img src="./img/notDone.svg" alt="" />
+                  <img src={info.data.stage >= 4 ? './img/done.svg' : './img/notDone.svg'} alt="" />
                   <div className={styles.status}>В пути</div>
                 </div>
                 <div className={styles.item}>
-                  <img src="./img/notDone.svg" alt="" />
+                  <img src={info.data.stage >= 5 ? './img/done.svg' : './img/notDone.svg'} alt="" />
                   <div className={styles.status}>Ожидает получения</div>
                 </div>
               </div>
@@ -124,18 +120,13 @@ function Check() {
           <div className={styles.search}>
             <div className={styles.title}>Отследить заказ</div>
             <div className={styles.subtitle}>
-              Форма «Отследить заказ» – удобный инструмент для поиска и
-              отслеживания грузов. <br /> Для того, чтобы узнать статус заказа
-              просто введите трек-номер в соответствующее поле.
+              Форма «Отследить заказ» – удобный инструмент для поиска и отслеживания грузов. <br />{' '}
+              Для того, чтобы узнать статус заказа просто введите трек-номер в соответствующее поле.
             </div>
             <div className={styles.input__block}>
-              <input
-                onChange={onInputChange}
-                type="text"
-                placeholder="Трек-номер отправления..."
-              />
+              <input onChange={onInputChange} type="text" placeholder="Трек-номер отправления..." />
 
-              <Link to={"/check"} state={{ track: value }}>
+              <Link to={'/check'} state={{ track: value }}>
                 <button onClick={onClickButton}>Найти отправление</button>
               </Link>
             </div>
