@@ -24,7 +24,6 @@ function Check() {
 
   React.useEffect(() => {
     if (location.state?.track) {
-      console.log('Трек есть');
       setStatus('filled');
       dispatch(fetchTrack(location.state.track));
     }

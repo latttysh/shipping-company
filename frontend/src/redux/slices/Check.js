@@ -4,15 +4,12 @@ import axios from "../../axios";
 export const fetchTrack = createAsyncThunk(
   "track/fetchTrack",
   async (params) => {
-    console.log("Отправляем данные");
-    console.log(params);
     const { data } = await axios.get(`/track/${params}`);
     return data
   }
 );
 
 export const fetchAddTrack = createAsyncThunk("track/fetchAddTrack", async (params) => {
-  console.log("Пытаемся создать трек");
   const {data} = await axios.post("/addtrack", params)
   return data
 })

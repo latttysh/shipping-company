@@ -10,9 +10,15 @@ function AdminPage() {
     mode: 'onBlur',
   });
 
+  const [track, setTrack] = React.useState("")
   const onSubmit = (data) => {
-    console.log(data);
-    dispatch(fetchAddTrack(data));
+
+    // 4124599773
+    let min = Math.ceil(7000000000);
+    let max = Math.floor(999999999);
+    let track = Math.floor(Math.random() * (max - min + 1)) + min
+    data.number = `${track}`
+    dispatch(fetchAddTrack(data)).then(()=>setTrack(track));
     alert(
       'Трек номер успешно создан! Проверьте его через отслеживание трек номеров перед отслыки клиенту.',
     );
@@ -24,10 +30,6 @@ function AdminPage() {
         <div className={styles.title}>Админ-панель</div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.wrapper}>
-            <div className={styles.item}>
-              <label>Трек номер</label>
-              <input {...register('number')} type="text" placeholder="Трек номер" />
-            </div>
             <div className={styles.item}>
               <label>Прибытие</label>
               <input {...register('date')} type="text" placeholder="Прибытие" />
@@ -63,6 +65,10 @@ function AdminPage() {
               <option value="4">В пути</option>
               <option value="5">Ожидает получения</option>
             </select>
+            <div className={styles.item}>
+              <label>Трек номер</label>
+              <input type="text" value={track} placeholder="Трек номер" />
+            </div>
           </div>
           <button className={styles.submitbtn} type="submit">
             Создать трек номер

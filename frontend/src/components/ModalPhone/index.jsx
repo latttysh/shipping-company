@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './modalphone.module.scss';
 import { useForm } from 'react-hook-form';
+import axios from "axios";
 
+
+// -1001544329561
 function ModalPhone({ close, thanks }) {
   const { register, handleSubmit } = useForm();
   const onButtonClick = (data) => {
-    console.log(data);
+    var message = `Пришла новая заявка на обратную связь%0AName: ${data.Name}%0APhone: ${data.Phone}`
+    axios.post(`https://api.telegram.org/bot2127951907:AAHtWd0aR-U07FeTKBfplcUU5wWdvOM-zYs/sendMessage?chat_id=-1001544329561&text=${message}&parse_mode=html`)
     close();
     thanks();
   };
@@ -24,7 +28,7 @@ function ModalPhone({ close, thanks }) {
             <input type="text" {...register('Name')} placeholder="Ваше имя" />
             <label>Ваш телефон</label>
             <input type="text" {...register('Phone')} placeholder="Ваш телефон" />
-            <button>Перезвоните мне</button>
+            <button className={styles.btn_conf}>Перезвоните мне</button>
           </form>
         </div>
       </div>

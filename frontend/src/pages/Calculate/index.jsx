@@ -38,7 +38,6 @@ function Calculate() {
   };
 
   const onSubmitSafety = (data) => {
-    console.log(data);
     dispatch(addSafety(data));
     setStep(step + 1);
   };
@@ -48,7 +47,6 @@ function Calculate() {
   };
 
   const items = useSelector((state) => state.info.items);
-  console.log(items);
   const dispatch = useDispatch();
 
   return (

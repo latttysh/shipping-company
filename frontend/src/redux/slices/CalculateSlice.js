@@ -24,11 +24,9 @@ export const calculateSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      console.log(action.payload);
       state.items.push(action.payload.item);
     },
     addSender: (state, action) => {
-      console.log(action.payload);
       state.sender = {
         name: action.payload.sender.name,
         lastName: action.payload.sender.lastName,
@@ -38,7 +36,6 @@ export const calculateSlice = createSlice({
       };
     },
     addReciever: (state, action) => {
-      console.log(action.payload);
       state.reciever = {
         name: action.payload.reciever.name,
         lastName: action.payload.reciever.lastName,
@@ -48,8 +45,6 @@ export const calculateSlice = createSlice({
       };
     },
     deleteItem: (state, action) => {
-      console.log('Удаление!');
-      console.log(action.payload);
       state.items = state.items.filter((item) => item.weight !== `${action.payload}`);
     },
     addSafety: (state, action) => {
