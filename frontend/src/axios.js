@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://80.78.241.139/api/',
+  baseURL: 'https://sibtranscompany.ru/api/',
 });
 
 export default instance;
